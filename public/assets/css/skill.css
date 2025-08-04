@@ -1,0 +1,137 @@
+:root {
+  --main-bg-color: #000;
+  --main-text-color: #00c8ff;
+  --scendary-text-color: #fff701;
+  --text-light: #fff;
+}
+.skills-section {
+  padding: 5rem 2rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.skill-article {
+  margin-bottom: 4rem;
+  background-color: #1a1a1a;
+  border-left: 1rem solid;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-article:hover {
+  transform: scale(1.01);
+}
+
+.skill-article i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.skill-article h2 {
+  margin: 0;
+  font-size: 3.5rem;
+  color: var(--text-light);
+}
+
+.skill-article p {
+  line-height: 1.6;
+  margin: 1rem 0;
+  font-size: 2.2rem;
+  color: var(--text-light);
+}
+
+pre {
+  background: #222;
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow-x: auto;
+  color: #00ffcc;
+  margin-bottom: 2rem;
+}
+.skill-article pre code {
+  font-size: 2rem;
+  line-height: 1.7 !important;
+}
+
+.skill-page {
+  padding: 2rem;
+  max-width: 10rem;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  color: var(--color);
+}
+
+.code-block {
+  background-color: #2e2e2e;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid var(--color);
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.code-block code {
+  color: #e5e5e5;
+  font-family: monospace;
+}
+
+.facts {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.facts div {
+  background-color: #333;
+  padding: 1rem;
+  border-left: 5px solid var(--color);
+  border-radius: 5px;
+}
+.skill-container {
+  background: #1c1c1c;
+  border-left: 8px solid var(--main-color);
+  padding: 1.5rem;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 15px var(--main-color);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+.skill-description {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+pre {
+  background: #222;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  color: #00ffcc;
+  margin-bottom: 2rem;
+}

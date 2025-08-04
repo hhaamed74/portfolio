@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Hamed Shahawi</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/cv.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/about.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="./dashboard/index.html"><h2 class="logo">Hamed Shahawi</h2></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="./dashboard/index.html">Home</a></li>
+          <li><a href="./skills.html">Skills</a></li>
+          <li><a href="#features">Features</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="auth-menu">
+            <a href="#">Account ▾</a>
+            <ul class="auth-dropdown">
+              <li><a href="login.html">Log In</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="dashboard/dashboard.html">Dashboard</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <section class="about-section">
+      <div class="container">
+        <div class="about-image">
+          <img src="./assets/images/hamed.jpg" alt="Hamed Shahawi" />
+        </div>
+        <div class="about-info">
+          <h1>About Me</h1>
+          <p><strong>Name:</strong> Hamed Shahawi</p>
+          <p><strong>Age:</strong> <span id="age"></span></p>
+          <p><strong>Education:</strong> B.Sc. in Computer Science</p>
+          <p>
+            I’m a passionate Front-End Developer with a strong foundation in
+            HTML, CSS, JavaScript, and more. I love building creative and
+            responsive websites.
+          </p>
+        </div>
+        <section class="education-certificates">
+          <h2>Education & Certificates</h2>
+
+          <div class="certificates-container">
+            <div class="certificate-card">
+              <h3>B.Sc. in Computer Science</h3>
+              <p><strong>University:</strong> M.E.T</p>
+              <p><strong>Year:</strong> 2024</p>
+              <a href="./assets/certificates/graduation.pdf" target="_blank"
+                ><img src="assets/images/certifcate.jpg" alt=""
+              /></a>
+            </div>
+
+            <div class="certificate-card">
+              <h3>Professional Front-End Web Development</h3>
+              <p><strong class="strong">Platform:</strong> MCIT</p>
+              <a href="./assets/certificates/react.pdf" target="_blank"
+                ><img
+                  src="./assets/images/certfic.png"
+                  alt=" Professional Front-End Web Development
+"
+              /></a>
+            </div>
+          </div>
+
+          <div class="cv-button">
+            <a href="cv.html" class="btn">📝 View My CV</a>
+          </div>
+        </section>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <a href="./dashboard/index.html"
+            ><h2 class="logo">Hamed Shahawi</h2></a
+          >
+          <p>Designed & Developed by Hamed Shahawi</p>
+          <p>
+            <span class="copy">&#169;</span> <span id="year"></span> Hamed
+            Shahawi. All rights reserved.
+          </p>
+        </div>
+        <div class="footer-center">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="./dashboard/index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <h3>Follow Me</h3>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/profile.php?id=100034763891165&mibextid=2JQ9oc"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://github.com/hhaamed74" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/hamedabdulmohsen/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

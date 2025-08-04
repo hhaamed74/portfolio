@@ -1,0 +1,147 @@
+.section-title {
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 5rem;
+}
+.section-title span {
+  color: #00c8ff;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-between;
+}
+
+.contact-info {
+  flex: 1 1 30rem;
+  font-size: 1.6rem;
+}
+.contact-info h3,
+.contact-info p {
+  color: #fff701;
+}
+
+.contact-info i {
+  color: #00c8ff;
+  margin-right: 1rem;
+}
+
+.contact-form {
+  flex: 1 1 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1.2em;
+  border: none;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  resize: none;
+  font-size: 1.5rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.send-btn {
+  background-color: #00c8ff;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #00a8d4;
+}
+
+/* Footer هنا نفس الكود اللي عملناه قبل كده */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 4rem 2rem;
+  margin-top: 10rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1 1 25rem;
+}
+
+.footer .logo {
+  color: #00c8ff;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-center ul li {
+  margin: 8px 0;
+}
+
+.footer-center ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-center ul li a:hover {
+  color: #00c8ff;
+}
+
+.footer-right .social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-right .social-icons a {
+  color: #fff;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+
+.footer-right .social-icons a:hover {
+  color: #00c8ff;
+}

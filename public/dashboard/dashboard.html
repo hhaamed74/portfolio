@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast"></div>
+
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+          <li class="active">Overview</li>
+          <li>Projects</li>
+          <li>Recycle Bin</li>
+          <li>Log History</li>
+          <hr class="my-line" />
+          <li>Skills</li>
+          <li>Messages</li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <!-- Overview Section -->
+        <section id="overview-section" class="section">
+          <h1>Welcome to your Dashboard</h1>
+          <p>Select a section from the sidebar to manage content.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <!-- Projects Section -->
+        <section id="projects-section" class="section" style="display: none">
+          <div class="section-header">
+            <h2>Projects</h2>
+            <div class="project-buttons">
+              <button id="add-project-btn">+ Add Project</button>
+              <button id="restore-project-btn">⏪ Restore Last</button>
+              <button id="clear-projects-btn" class="danger-btn">
+                🗑️ Clear All
+              </button>
+              <button id="export-projects-btn">📤 Export</button>
+              <button id="import-projects-btn">📥 Import</button>
+              <input
+                type="file"
+                id="import-file-input"
+                accept=".json"
+                style="display: none"
+              />
+            </div>
+          </div>
+          <div class="search-filter">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search by title or description..."
+            />
+          </div>
+
+          <div class="project-list" id="project-list">
+            <!-- Projects will appear here -->
+          </div>
+        </section>
+
+        <!-- Recycle Bin Section -->
+        <section id="recycle-bin-section" class="section" style="display: none">
+          <h2>♻️ Recycle Bin</h2>
+          <div id="recycle-list" class="recycle-list"></div>
+          <button class="clear" id="clear-recycle-btn">
+            ♻️ Clear Recycle Bin
+          </button>
+        </section>
+
+        <!-- Log History Section -->
+        <section id="log-history-section" class="section" style="display: none">
+          <h2>📋 Log History</h2>
+          <ul id="log-list" class="log-list"></ul>
+          <button class="clear" id="clear-logs-btn" style="margin-top: 10px">
+            🗑️ Clear Logs
+          </button>
+        </section>
+      </main>
+
+      <!-- Add Project Form -->
+      <div id="project-form-container" style="display: none; margin-top: 20px">
+        <form id="project-form">
+          <input
+            type="text"
+            id="project-title"
+            placeholder="Project Title"
+            required
+          />
+          <label for="project-image">Upload Image:</label>
+          <input type="file" id="project-image" accept="image/*" />
+          <label for="project-image-url">Or Image URL:</label>
+          <input
+            type="url"
+            id="project-image-url"
+            placeholder="https://example.com/image.png"
+          />
+          <textarea
+            id="project-description"
+            placeholder="Project Description"
+            required
+          ></textarea>
+          <div id="skills-container">
+            <label>Technologies Used:</label>
+            <input type="text" class="tech-input" placeholder="e.g., HTML" />
+            <input type="text" class="tech-input" placeholder="e.g., CSS" />
+            <input
+              type="text"
+              class="tech-input"
+              placeholder="e.g., JavaScript"
+            />
+            <input type="text" class="tech-input" placeholder="e.g., React" />
+          </div>
+          <label for="project-demo">Demo Link:</label>
+          <input
+            type="url"
+            id="project-demo"
+            placeholder="https://yourdemo.com"
+          />
+          <button type="submit">Save Project</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

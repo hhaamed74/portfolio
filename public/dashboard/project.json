@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "My Portfolio Website",
+    "description": "A personal portfolio website showcasing my work and skills.",
+    "image": "../assets/images/image.png",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "demo": "https://myportfolio.com"
+  },
+  {
+    "id": 2,
+    "title": "Todo App",
+    "description": "A simple Todo application with add, edit, delete and mark-as-done features.",
+    "image": "../assets/images/image.png",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "demo": "https://mytodoapp.com"
+  },
+  {
+    "id": 3,
+    "title": "Weather App",
+    "description": "App that shows current weather using OpenWeatherMap API.",
+    "image": "../assets/images/image.png",
+    "technologies": ["HTML", "CSS", "JavaScript", "API"],
+    "demo": "https://myweatherapp.com"
+  }
+]
