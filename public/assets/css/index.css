@@ -345,3 +345,45 @@
     transform: translateY(0);
   }
 }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+.skill-card {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 10px #00c8ff33;
+  transition: transform 0.3s;
+  font-size: 2rem;
+}
+
+/* .skill-card:hover {
+  transform: scale(1.05);
+} */
+.view__all {
+  margin-top: 3rem;
+  text-align: center;
+}
+.view-more-btn {
+  display: inline-block;
+  font-size: 2rem;
+  padding: 1.2rem 2.4rem;
+  background: linear-gradient(135deg, #00c8ff, #fff701);
+  color: var(--main-bg-color);
+  font-weight: bold;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 0 1rem #00c8ff88;
+  transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+  background-color: #00aacc;
+}

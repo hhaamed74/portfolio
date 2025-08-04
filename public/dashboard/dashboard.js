@@ -260,6 +260,7 @@ const projectImageInput = document.getElementById("project-image");
 const projectImageURLInput = document.getElementById("project-image-url");
 const projectDemoInput = document.getElementById("project-demo");
 const techInputs = document.querySelectorAll(".tech-input");
+// ==== Selectors ====
 
 addProjectBtn.addEventListener("click", () => {
   projectFormContainer.style.display =
@@ -402,3 +403,176 @@ document
 renderProjects();
 renderRecycleBin();
 renderLogs();
+function getSkillsFromStorage() {
+  return JSON.parse(localStorage.getItem("skills")) || [];
+}
+
+function saveSkillsToStorage(skills) {
+  localStorage.setItem("skills", JSON.stringify(skills));
+}
+
+function updateColorFilterOptions(skills) {
+  const filterColor = document.getElementById("filter-color");
+  const uniqueColors = [...new Set(skills.map((skill) => skill.color))];
+  filterColor.innerHTML = `<option value="">🎨 Filter by color</option>`;
+  uniqueColors.forEach((color) => {
+    const option = document.createElement("option");
+    option.value = color;
+    option.textContent = color;
+    option.style.color = color;
+    filterColor.appendChild(option);
+  });
+}
+
+function renderSkills() {
+  const skillList = document.getElementById("skill-list");
+  const searchInput = document
+    .getElementById("search-input")
+    .value.toLowerCase();
+  const selectedColor = document.getElementById("filter-color").value;
+
+  const skills = getSkillsFromStorage();
+
+  const filteredSkills = skills.filter((skill) => {
+    const matchName = skill.name.toLowerCase().includes(searchInput);
+    const matchColor = selectedColor === "" || skill.color === selectedColor;
+    return matchName && matchColor;
+  });
+
+  updateColorFilterOptions(skills);
+
+  skillList.innerHTML = "";
+
+  if (filteredSkills.length === 0) {
+    skillList.innerHTML = `<p class="no-skills">No matching skills found.</p>`;
+    return;
+  }
+
+  filteredSkills.forEach((skill, index) => {
+    const skillCard = document.createElement("div");
+    skillCard.className = "project-card";
+    skillCard.innerHTML = `
+      <i class="${skill.icon}" style="color:${skill.color}; font-size: 2rem;"></i>
+      <h3>${skill.name}</h3>
+      <button class="delete-skill-btn" data-index="${index}">🗑 Delete</button>
+    `;
+    skillList.appendChild(skillCard);
+  });
+
+  document.querySelectorAll(".delete-skill-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const confirmed = confirm(
+        "⚠️ Are you sure you want to delete this skill?"
+      );
+      if (!confirmed) return;
+
+      const index = this.dataset.index;
+      const skills = getSkillsFromStorage();
+      const deletedSkill = skills.splice(index, 1)[0];
+
+      const prevDeleted =
+        JSON.parse(localStorage.getItem("deletedSkills")) || [];
+      const alreadyDeletedOnce = prevDeleted.some(
+        (s) => s.name === deletedSkill.name && s.icon === deletedSkill.icon
+      );
+
+      if (alreadyDeletedOnce) {
+        showToast("❌ Skill deleted permanently.");
+        localStorage.removeItem("lastDeletedSkill");
+      } else {
+        showToast("⚠️ Skill deleted. You can restore it once.");
+        localStorage.setItem("lastDeletedSkill", JSON.stringify(deletedSkill));
+        prevDeleted.push(deletedSkill);
+        localStorage.setItem("deletedSkills", JSON.stringify(prevDeleted));
+      }
+
+      saveSkillsToStorage(skills);
+      renderSkills();
+    });
+  });
+}
+
+function addSkill(skill) {
+  const skills = getSkillsFromStorage();
+  skills.push(skill);
+  saveSkillsToStorage(skills);
+  renderSkills();
+}
+
+document.getElementById("skill-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const name = document.getElementById("skill-name").value.trim();
+  const icon = document.getElementById("skill-icon").value.trim();
+  const color = document.getElementById("skill-color").value;
+
+  if (!name || !icon) {
+    showToast("⚠️ Please fill in both Name and Icon fields.");
+    return;
+  }
+
+  const skills = getSkillsFromStorage();
+  const duplicate = skills.some(
+    (skill) =>
+      skill.name.toLowerCase() === name.toLowerCase() || skill.icon === icon
+  );
+
+  if (duplicate) {
+    showToast("❌ Skill with same name or icon already exists!");
+    return;
+  }
+
+  const newSkill = { name, icon, color };
+  addSkill(newSkill);
+
+  // Reset form
+  document.getElementById("skill-name").value = "";
+  document.getElementById("skill-icon").value = "";
+  document.getElementById("skill-color").value = "#00c8ff";
+  showToast("✅ Skill added successfully.");
+});
+
+document.getElementById("search-input").addEventListener("input", renderSkills);
+document
+  .getElementById("filter-color")
+  .addEventListener("change", renderSkills);
+
+document.getElementById("clear-skills-btn").addEventListener("click", () => {
+  const confirmClear = confirm("⚠️ Are you sure you want to clear all skills?");
+  if (!confirmClear) return;
+  localStorage.removeItem("skills");
+  showToast("🗑 All skills cleared.");
+  renderSkills();
+});
+
+document.getElementById("restore-skill-btn").addEventListener("click", () => {
+  const lastDeletedSkillJSON = localStorage.getItem("lastDeletedSkill");
+
+  if (!lastDeletedSkillJSON) {
+    showToast("⚠️ No skill to restore!");
+    return;
+  }
+
+  const lastDeletedSkill = JSON.parse(lastDeletedSkillJSON);
+  const skills = getSkillsFromStorage();
+
+  const alreadyExists = skills.some(
+    (skill) =>
+      skill.name.toLowerCase() === lastDeletedSkill.name.toLowerCase() ||
+      skill.icon === lastDeletedSkill.icon
+  );
+
+  if (alreadyExists) {
+    showToast("⚠️ This skill is already restored!");
+    localStorage.removeItem("lastDeletedSkill");
+    return;
+  }
+
+  skills.push(lastDeletedSkill);
+  saveSkillsToStorage(skills);
+  localStorage.removeItem("lastDeletedSkill");
+  showToast("✅ Skill restored successfully");
+  renderSkills();
+});
+
+// ✅ Initial Render
+renderSkills();

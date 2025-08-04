@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    />
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="dashboard.css" />
   </head>
@@ -21,6 +29,7 @@
           <hr class="my-line" />
           <li>Skills</li>
           <li>Messages</li>
+          <li>Article</li>
         </ul>
       </aside>
 
@@ -82,6 +91,48 @@
             🗑️ Clear Logs
           </button>
         </section>
+        <!-- Skills Section -->
+        <section id="skills-section" class="section" style="display: none">
+          <div class="section-header">
+            <h2>Skills</h2>
+            <button id="clear-skills-btn" class="danger-btn">
+              🧹 Clear All Skills
+            </button>
+            <button id="restore-skill-btn">Restore Last Deleted Skill</button>
+          </div>
+          <!-- 🔍 Search and Filter Section -->
+          <div class="filter-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="🔍 Search skill by name"
+            />
+            <select id="filter-color">
+              <option value="">🎨 Filter by color</option>
+              <!-- سيتم ملؤها تلقائيًا -->
+            </select>
+          </div>
+          <form id="skill-form">
+            <input
+              type="text"
+              id="skill-name"
+              placeholder="Skill Name"
+              required
+            />
+            <input
+              type="text"
+              id="skill-icon"
+              placeholder="FontAwesome Class (e.g. fa-solid fa-code)"
+              required
+            />
+            <input type="color" id="skill-color" value="#00c8ff" />
+            <button type="submit">➕ Add Skill</button>
+          </form>
+
+          <div id="skill-list" class="project-list"></div>
+        </section>
+
+        <!-- === Skills Section in Dashboard === -->
       </main>
 
       <!-- Add Project Form -->
@@ -129,5 +180,6 @@
     </div>
 
     <script src="dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   </body>
 </html>

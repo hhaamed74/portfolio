@@ -489,3 +489,109 @@ input.badge-input {
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+
+/* SKILL HERE */
+#skill-form {
+  background-color: #111;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#skill-form input,
+#skill-form button {
+  font-size: 1.4rem;
+}
+
+#skill-form input {
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid var(--main-text-color);
+  border-radius: 6px;
+}
+
+#skill-form button {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#skill-form button:hover {
+  background-color: var(--scendary-text-color);
+  color: #000;
+}
+/* Optional: Highlight code block */
+pre code {
+  display: block;
+  background-color: #1e1e1e;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  color: #fff;
+  overflow-x: auto;
+  white-space: pre-wrap; /* ✅ ده اللي بينزل الأسطر */
+}
+#restore-skill-btn {
+  background-color: var(--scendary-text-color);
+  color: var(--main-bg-color);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.delete-skill-btn {
+  background-color: red;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+.filter-container {
+  margin: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#search-input,
+#filter-color {
+  padding: 10px 15px;
+  font-size: 2rem;
+  border: 2px solid #00c8ff;
+  border-radius: 10px;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+  transition: 0.3s;
+  min-width: 200px;
+}
+
+#search-input:focus,
+#filter-color:focus {
+  border-color: #fff701;
+  box-shadow: 0 0 10px #00c8ffaa;
+}
+
+@media (max-width: 600px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search-input,
+  #filter-color {
+    width: 100%;
+  }
+}
