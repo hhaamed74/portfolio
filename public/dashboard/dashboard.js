@@ -1,3 +1,19 @@
+window.addEventListener("DOMContentLoaded", function () {
+  const loggedInUser = JSON.parse(localStorage.getItem("currentUser"));
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (!loggedInUser || isLoggedIn !== "true") {
+    window.location.href = "/public/login.html";
+  }
+
+  // ✅ عرض اسم المستخدم داخل الداشبورد
+  const usernameElement = document.getElementById("dashboard-username");
+  if (usernameElement && loggedInUser) {
+    usernameElement.textContent =
+      loggedInUser.username || loggedInUser.name || loggedInUser.email;
+  }
+});
+
 // ==== Selectors & Storage Setup ====
 
 const sidebarItems = document.querySelectorAll(".sidebar ul li");

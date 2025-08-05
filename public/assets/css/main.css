@@ -44,9 +44,9 @@ html {
 body {
   background: var(--main-bg-color);
   color: var(--main-text-color);
-  font-family: "Bitcount", monospace;
   height: 100vh;
   line-height: 1.6;
+  font-family: "Bitcount", monospace;
 }
 a {
   text-decoration: none;
