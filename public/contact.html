@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="./assets/css/contact.css" />
   </head>
   <body>
+    <div id="toast" class="toast"></div>
+
     <nav class="navbar">
       <div class="container">
         <a href="./dashboard/index.html"><h2 class="logo">Hamed Shahawi</h2></a>
@@ -75,13 +77,12 @@
           </div>
 
           <form id="contact-form" class="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required />
-            <input type="email" id="email" placeholder="Your Email" required />
+            <input type="text" id="name" placeholder="Your Name" />
+            <input type="email" id="email" placeholder="Your Email" />
             <textarea
               id="message"
               rows="6"
               placeholder="Your Message"
-              required
             ></textarea>
             <button type="submit" class="send-btn">Send Message</button>
           </form>
@@ -131,7 +132,7 @@
       </div>
     </footer>
     <script src="./assets/js/auth.js"></script>
-
+    <script src="./dashboard/dashboard.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/contact.js"></script>
   </body>

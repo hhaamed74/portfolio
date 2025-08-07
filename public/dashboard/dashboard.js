@@ -592,3 +592,64 @@ document.getElementById("restore-skill-btn").addEventListener("click", () => {
 
 // ✅ Initial Render
 renderSkills();
+
+function renderMessages(filter = "") {
+  const messageList = document.getElementById("message-list");
+  const search = filter.toLowerCase();
+  const messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+  const filteredMessages = messages.filter(
+    (msg) =>
+      msg.name.toLowerCase().includes(search) ||
+      msg.email.toLowerCase().includes(search)
+  );
+
+  messageList.innerHTML =
+    filteredMessages.length === 0
+      ? `<li style="text-align: center">No messages found.</li>`
+      : "";
+
+  filteredMessages.forEach((msg) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <div class="msg-box">
+        <strong>👤 ${msg.name}</strong><br/>
+        <small>📧 ${msg.email}</small><br/>
+        <small>📅 ${msg.date}</small>
+        <p>💬 ${msg.message}</p>
+        <button class="message-delet" onclick="deleteMessage(${msg.id})">🗑 Delete</button>
+      </div>
+    `;
+    messageList.appendChild(li);
+  });
+}
+
+function deleteMessage(id) {
+  const messages = JSON.parse(localStorage.getItem("messages")) || [];
+  const updated = messages.filter((msg) => msg.id !== id);
+  localStorage.setItem("messages", JSON.stringify(updated));
+  renderMessages(document.getElementById("search-message").value);
+  showToast("🗑 Message deleted!");
+}
+
+function clearAllMessages() {
+  localStorage.removeItem("messages");
+  renderMessages();
+  showToast("🧹 All messages cleared!");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderMessages();
+
+  const searchInput = document.getElementById("search-message");
+  searchInput.addEventListener("input", (e) => {
+    renderMessages(e.target.value);
+  });
+
+  const clearAllBtn = document.getElementById("clear-all-btn");
+  clearAllBtn.addEventListener("click", () => {
+    if (confirm("⚠️ Are you sure you want to delete all messages?")) {
+      clearAllMessages();
+    }
+  });
+});

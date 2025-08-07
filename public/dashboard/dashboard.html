@@ -35,7 +35,7 @@
           <hr class="my-line" />
           <li>Skills</li>
           <li>Messages</li>
-          <li>Article</li>
+          <li data-section="profile-section">Profile</li>
           <hr class="my-line" />
           <a href="./index.html"> <li>Home</li></a>
         </ul>
@@ -141,8 +141,29 @@
         </section>
 
         <!-- === Skills Section in Dashboard === -->
-      </main>
 
+        <section id="messages-section" class="section">
+          <h2 class="section-title">📩 Messages</h2>
+
+          <!-- 🔍 Search Filter -->
+          <input
+            type="text"
+            id="search-message"
+            placeholder="Search by name or email"
+            class="message-search"
+          />
+
+          <!-- 🧹 Clear All -->
+          <button id="clear-all-btn" class="clear-all-btn">🧹 Clear All</button>
+
+          <!-- 🔔 Toast -->
+          <div id="toast" class="toast"></div>
+
+          <!-- 📩 Message List -->
+          <ul id="message-list" class="message-list"></ul>
+        </section>
+        <!-- ==== Profile Section ==== -->
+      </main>
       <!-- Add Project Form -->
       <div id="project-form-container" style="display: none; margin-top: 20px">
         <form id="project-form">

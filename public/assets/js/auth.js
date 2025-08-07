@@ -56,7 +56,7 @@ function showToast(message, type = "default") {
   }, 3000);
 }
 
-// ==== Register Logic ====
+// ==== Register Logic with Strong Validation ====
 if (registerForm) {
   registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -64,6 +64,35 @@ if (registerForm) {
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim().toLowerCase();
     const password = document.getElementById("password").value;
+
+    // === Validation ===
+    const nameRegex = /^[a-zA-Z\s]{3,30}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!name || !nameRegex.test(name)) {
+      showMessage(
+        registerMessage,
+        "❌ Name must be 3-30 letters only.",
+        "error"
+      );
+      return;
+    }
+
+    if (!email || !emailRegex.test(email)) {
+      showMessage(registerMessage, "❌ Invalid email format.", "error");
+      return;
+    }
+
+    if (!password || !passwordRegex.test(password)) {
+      showMessage(
+        registerMessage,
+        "❌ Password must be at least 8 characters with upper, lower, number, and symbol.",
+        "error"
+      );
+      return;
+    }
 
     const users = getUsers();
     const userExists = users.find((user) => user.email === email);
@@ -77,6 +106,7 @@ if (registerForm) {
     users.push(newUser);
     saveUsers(users);
     setCurrentUser(newUser);
+
     showMessage(registerMessage, "✅ Registered successfully!", "success");
     setTimeout(() => {
       window.location.href = "/public/login.html";
@@ -84,7 +114,7 @@ if (registerForm) {
   });
 }
 
-/// ==== Login Logic ====
+/// ==== Login Logic with Validation ====
 if (loginForm) {
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -94,6 +124,18 @@ if (loginForm) {
       .value.trim()
       .toLowerCase();
     const password = document.getElementById("login-password").value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email || !emailRegex.test(email)) {
+      showMessage(loginMessage, "❌ Enter a valid email.", "error");
+      return;
+    }
+
+    if (!password) {
+      showMessage(loginMessage, "❌ Password cannot be empty.", "error");
+      return;
+    }
 
     const users = getUsers();
     const foundUser = users.find(
@@ -105,7 +147,7 @@ if (loginForm) {
       return;
     }
 
-    // ✅ حفظ بيانات المستخدم وتسجيل الدخول
+    // ✅ Save and Redirect
     setCurrentUser(foundUser);
     localStorage.setItem("isLoggedIn", "true");
 
