@@ -50,7 +50,7 @@ function logoutUser() {
   localStorage.removeItem("currentUser");
   showToast("👋 Logged out successfully!");
   setTimeout(() => {
-    window.location.href = "/public/login.html";
+    window.location.href = "./login.html";
   }, 1000);
 }
 
@@ -153,7 +153,7 @@ if (registerForm) {
     showMessage(registerMessage, "✅ Registered successfully!", "success");
 
     setTimeout(() => {
-      window.location.href = "/public/login.html";
+      window.location.href = "./login.html";
     }, 1500);
   });
 }
@@ -201,7 +201,7 @@ if (loginForm) {
     showMessage(loginMessage, "✅ Login successful!", "success");
 
     setTimeout(() => {
-      window.location.href = "/public/index.html";
+      window.location.href = "./index.html";
     }, 1000);
   });
 }
@@ -222,12 +222,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentUser = getCurrentUser();
     authMenu.innerHTML = currentUser
       ? `
-        <li><a href="/public/dashboard/dashboard.html">Dashboard</a></li>
+        <li><a href="./dashboard.html">Dashboard</a></li>
         <li><a href="#" id="logout-btn">Logout</a></li>
       `
       : `
-        <li><a href="/public/login.html">Log In</a></li>
-        <li><a href="/public/register.html">Register</a></li>
+        <li><a href="./login.html">Log In</a></li>
+        <li><a href="./register.html">Register</a></li>
       `;
     if (currentUser) {
       const logoutLink = document.getElementById("logout-btn");
@@ -238,13 +238,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Restrict access to protected pages
-  const isProtected = window.location.pathname.includes("/public/dashboard/");
+  const isProtected = window.location.pathname.includes("./dashboard/");
 
   if (
     isProtected &&
     (!getCurrentUser() || localStorage.getItem("isLoggedIn") !== "true")
   ) {
     alert("Please login to access the dashboard.");
-    window.location.href = "/public/login.html";
+    window.location.href = "./login.html";
   }
 });

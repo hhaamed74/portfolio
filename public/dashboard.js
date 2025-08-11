@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Redirect to login if not authenticated
   if (!loggedInUser || isLoggedIn !== "true") {
-    window.location.href = "/public/login.html";
+    window.location.href = "./login.html";
   }
 
   // Display username in dashboard if available
