@@ -201,7 +201,7 @@ if (loginForm) {
     showMessage(loginMessage, "✅ Login successful!", "success");
 
     setTimeout(() => {
-      window.location.href = "/public/dashboard/index.html";
+      window.location.href = "/public/index.html";
     }, 1000);
   });
 }
