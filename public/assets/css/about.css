@@ -1,9 +1,16 @@
+/* ===============================
+   Root Variables
+   =============================== */
 :root {
   --main-bg-color: #000;
   --main-text-color: #00c8ff;
   --scendary-text-color: #fff701;
   --text-light: #fff;
 }
+
+/* ===============================
+   About Section
+   =============================== */
 .about-section {
   padding: 5rem 2rem;
   background-color: #111;
@@ -24,6 +31,9 @@
   margin: auto;
 }
 
+/* ===============================
+   Profile Image Styling
+   =============================== */
 .about-image img {
   width: 28rem;
   height: 28rem;
@@ -33,6 +43,9 @@
   box-shadow: 0 0 20px var(--main-text-color);
 }
 
+/* ===============================
+   About Info
+   =============================== */
 .about-info h1 {
   font-size: 4rem;
   margin-bottom: 1.5rem;
@@ -45,6 +58,9 @@
   line-height: 1.6;
 }
 
+/* ===============================
+   Education & Certificates Section
+   =============================== */
 .education-certificates {
   width: 80rem;
   margin: 3rem auto;
@@ -67,12 +83,18 @@
   color: var(--main-text-color);
 }
 
+/* ===============================
+   Certificates Grid
+   =============================== */
 .certificates-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
+/* ===============================
+   Certificate Card
+   =============================== */
 .certificate-card {
   background: white;
   padding: 1.5rem;
@@ -96,9 +118,11 @@
   margin: 0.3rem 0;
   font-weight: bold;
 }
+
 .strong {
   font-size: 1.8rem;
 }
+
 .certificate-card a {
   display: inline-block;
   margin-top: 0.5rem;
@@ -106,10 +130,14 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
 .certificate-card a img {
   max-width: 100%;
 }
 
+/* ===============================
+   CV Button
+   =============================== */
 .cv-button {
   text-align: center;
   margin-top: 3rem;
@@ -130,6 +158,9 @@
   background-color: #009ac2;
 }
 
+/* ===============================
+   Responsive Design
+   =============================== */
 @media (max-width: 500px) {
   .certificate-card {
     padding: 1rem;

@@ -1,3 +1,6 @@
+/* ===========================
+   Font Import
+   =========================== */
 @font-face {
   font-family: "Bitcount";
   src: url("../fonts/bitcount-single/static/BitcountSingle-Regular.ttf")
@@ -5,24 +8,55 @@
   font-weight: normal;
   font-style: normal;
 }
+
+/* ===========================
+   CSS Variables
+   =========================== */
 :root {
   --main-bg-color: #000;
   --main-text-color: #00c8ff;
   --scendary-text-color: #fff701;
   --text-light: #fff;
 }
+
+/* ===========================
+   Global Reset & Base Styles
+   =========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
 }
+
 html {
   scroll-behavior: smooth;
-  font-size: 62.5%;
-  /* 10px = 1rem */
+  font-size: 62.5%; /* 10px = 1rem */
 }
-/* Scrollbar customization */
+
+body {
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+  height: 100vh;
+  line-height: 1.6;
+  font-family: "Bitcount", monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.my-line {
+  border: none;
+  height: 2px;
+  background-color: #00c8ff;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* ===========================
+   Scrollbar Customization
+   =========================== */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -41,25 +75,9 @@ html {
   background-color: #fff701;
 }
 
-body {
-  background: var(--main-bg-color);
-  color: var(--main-text-color);
-  height: 100vh;
-  line-height: 1.6;
-  font-family: "Bitcount", monospace;
-}
-a {
-  text-decoration: none;
-}
-.my-line {
-  border: none;
-  height: 2px;
-  background-color: #00c8ff;
-  margin: 20px 0;
-  width: 100%;
-}
-/* nav */
-
+/* ===========================
+   Navbar Styles
+   =========================== */
 .navbar {
   position: sticky;
   top: 0;
@@ -86,7 +104,6 @@ a {
   font-size: 2rem;
   letter-spacing: 1px;
   text-shadow: 0 0 5px #00c8ffaa;
-  font-size: 2rem;
   cursor: pointer;
   text-transform: uppercase;
 }
@@ -124,9 +141,17 @@ a {
 .nav-links li a:hover::after {
   width: 100%;
 }
-/* Account Dropdown */
+
+/* ===========================
+   Account Dropdown
+   =========================== */
 .auth-menu {
   position: relative;
+}
+
+.auth-menu > a::after {
+  content: " ▾";
+  font-size: 1rem;
 }
 
 .auth-dropdown {
@@ -149,7 +174,6 @@ a {
   display: block;
   padding: 1rem;
   color: var(--main-text-color);
-  text-decoration: none;
   font-size: 1.6rem;
   font-weight: 500;
   transition: 0.3s ease;
@@ -161,17 +185,13 @@ a {
   color: var(--scendary-text-color);
 }
 
-/* Show dropdown on hover */
 .auth-menu.show .auth-dropdown {
   display: block;
 }
-/* Keep one visible by default */
-.auth-menu > a::after {
-  content: " ▾";
-  font-size: 1rem;
-}
 
-/* === Navbar Responsive === */
+/* ===========================
+   Navbar Responsive
+   =========================== */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -187,7 +207,6 @@ a {
   border-radius: 2px;
 }
 
-/* Media Query */
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
@@ -209,17 +228,20 @@ a {
     display: flex;
   }
 }
+
 @media (max-width: 1000px) {
   .logo {
     font-size: 1.6rem;
   }
+
   .nav-links li a {
     font-size: 1.4rem;
   }
 }
 
-/* footer */
-
+/* ===========================
+   Footer Styles
+   =========================== */
 .footer {
   background: #111;
   color: var(--text-light);
@@ -246,7 +268,6 @@ a {
   color: var(--scendary-text-color);
   margin-bottom: 1rem;
   font-size: 2.4rem;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -259,6 +280,7 @@ a {
   font-size: 2.4rem;
   color: var(--main-text-color);
 }
+
 .footer-center ul {
   list-style: none;
   padding: 0;
@@ -271,7 +293,6 @@ a {
 
 .footer-center ul li a {
   color: var(--text-light);
-  text-decoration: none;
   transition: 0.3s ease;
 }
 
@@ -298,6 +319,10 @@ a {
 .copy {
   font-family: Arial, sans-serif;
 }
+
+/* ===========================
+   Toast Notification
+   =========================== */
 .toast {
   visibility: hidden;
   min-width: 200px;
@@ -316,6 +341,7 @@ a {
   transition: visibility 0s, opacity 0.4s ease;
   opacity: 0;
 }
+
 .toast.show {
   visibility: visible;
   opacity: 1;

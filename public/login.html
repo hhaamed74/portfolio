@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ==============================
+         Meta Tags
+    ============================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | Portfolio</title>
+
+    <!-- ==============================
+         Google Fonts
+    ============================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <!-- favicon -->
+
+    <!-- ==============================
+         Favicon
+    ============================== -->
     <link
       rel="shortcut icon"
       href="./assets/images/favicon.ico"
       type="image/x-icon"
     />
-    <!-- font-awesome -->
+
+    <!-- ==============================
+         Font Awesome Icons
+    ============================== -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./assets/css/main.css" />
 
+    <!-- ==============================
+         CSS Stylesheets
+    ============================== -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/login.css" />
   </head>
+
   <body>
+    <!-- ==============================
+         Toast Notification
+    ============================== -->
     <div id="toast" class="toast"></div>
 
+    <!-- ==============================
+         Login Form Container
+    ============================== -->
     <div class="auth-container">
       <h2>Login</h2>
+
+      <!-- Login Form -->
       <form id="login-form">
         <input type="email" id="login-email" placeholder="Email" required />
         <input
@@ -40,13 +65,20 @@
         />
         <button type="submit">Login</button>
       </form>
+
+      <!-- Message Display -->
       <p id="login-message"></p>
+
+      <!-- Footer with Register Link -->
       <p class="auth-footer">
         Don't have an account?
         <a class="login" href="./register.html">Register</a>
       </p>
     </div>
 
+    <!-- ==============================
+         JavaScript File
+    ============================== -->
     <script src="./assets/js/auth.js"></script>
   </body>
 </html>

@@ -1,3 +1,16 @@
+/*
+  dashboard.styles.sorted.css
+  Organized and commented version of your dashboard CSS.
+  - No values or selectors changed.
+  - Sections grouped for readability and maintainability.
+  - Professional English comments describe each block.
+*/
+
+/* ==========================
+   1) CSS Variables
+   ==========================
+   Centralized theme variables for colors and badges.
+*/
 :root {
   --main-bg-color: #000;
   --main-text-color: #00c8ff;
@@ -6,9 +19,16 @@
   --badge-bg: #00c8ff;
   --badge-text: #000;
 }
+
+/* ==========================
+   2) Base / Global Styles
+   ==========================
+   Resets, base typography and body layout.
+*/
 * {
   font-family: "Bitcount", monospace;
 }
+
 /* Base Styles */
 body {
   background-color: var(--main-bg-color);
@@ -18,11 +38,16 @@ body {
   flex-direction: column;
   font-family: "Bitcount", monospace;
 }
-/* ===== Dashboard Header Styling ===== */
+
+/* ==========================
+   3) Header / Dashboard Top Bar
+   ==========================
+   Styles for the sticky dashboard header and welcome area.
+*/
 .dashboard-header {
   position: sticky;
   top: 0;
-  background-color: #1e1e2f; /* لون هادي */
+  background-color: #1e1e2f; /* subtle header background */
   color: #ffffff;
   padding: 15px 30px;
   font-size: 2.5rem;
@@ -38,10 +63,15 @@ body {
 }
 
 #dashboard-username {
-  color: #00c8ff; /* لون مميز للاسم */
+  color: #00c8ff; /* accent color for username */
   font-weight: bold;
 }
 
+/* ==========================
+   4) Layout: Container, Sidebar, Main
+   ==========================
+   Dashboard main layout and sidebar navigation.
+*/
 .dashboard-container {
   display: flex;
   flex-direction: row;
@@ -99,6 +129,11 @@ body {
   margin-bottom: 20px;
 }
 
+/* ==========================
+   5) Projects: Grid and Card Styles
+   ==========================
+   Project grid, project card and inner elements.
+*/
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -116,7 +151,7 @@ body {
 }
 
 .project-card h3 {
-  font-size: 2.2rem; /* أكبر من الطبيعي */
+  font-size: 2.2rem; /* slightly larger heading */
   color: var(--scendary-text-color);
   margin-bottom: 10px;
 }
@@ -127,7 +162,7 @@ body {
 }
 
 .project-card a {
-  color: white !important; /* اللينك بالأبيض */
+  color: white !important; /* links on cards should be white */
   font-size: 1.6rem;
   font-weight: bold;
   display: inline-block;
@@ -142,6 +177,11 @@ body {
   margin-top: 10px;
 }
 
+/* ==========================
+   6) Project Form / Inputs
+   ==========================
+   Form container and inputs used to create/edit projects.
+*/
 #project-form-container {
   background-color: #111;
   padding: 20px;
@@ -183,6 +223,11 @@ label {
   color: #000;
 }
 
+/* ==========================
+   7) Buttons: Base + Variants
+   ==========================
+   Generic buttons and specific action buttons used across dashboard.
+*/
 button {
   padding: 10px 16px;
   font-size: 14px;
@@ -210,6 +255,7 @@ button {
 #clear-projects-btn:hover {
   background-color: #e6e000;
 }
+
 .clear {
   background-color: red;
   color: white;
@@ -217,6 +263,7 @@ button {
   font-size: 1.5rem;
   border-radius: 0.6rem;
 }
+
 .delete-btn {
   background-color: red;
   color: white;
@@ -228,6 +275,7 @@ button {
 .delete-btn:hover {
   background-color: darkred;
 }
+
 .restore-btn {
   background-color: green;
   color: white;
@@ -240,6 +288,11 @@ button {
   background-color: darkgreen;
 }
 
+/* ==========================
+   8) Badges (project-level)
+   ==========================
+   Visual chips used to represent skills/technologies on projects.
+*/
 .badges-container {
   display: flex;
   flex-wrap: wrap;
@@ -268,7 +321,11 @@ input.badge-input {
   font-size: 1.4rem;
 }
 
-/* ✅ Responsive Design */
+/* ==========================
+   9) Responsive Breakpoints
+   ==========================
+   Adjust layout for medium and small screens.
+*/
 @media (max-width: 992px) {
   .dashboard-container {
     flex-direction: column;
@@ -327,7 +384,10 @@ input.badge-input {
   }
 }
 
-/* زرار إضافي */
+/* ==========================
+   10) Utility / Secondary Buttons
+   ==========================
+*/
 .secondary-btn {
   background-color: #eee;
   color: #333;
@@ -342,7 +402,14 @@ input.badge-input {
   background-color: #ddd;
 }
 
-/* 🔽 تنسيقات إضافية للمودالات (Recycle Bin & Log History) */
+/* NOTE: there is a later override of .secondary-btn in original file
+   (keeps original cascade behavior). The override appears after the
+   modal / danger-button section below. */
+
+/* ==========================
+   11) Modals / Recycle / Log styles
+   ==========================
+*/
 .modal {
   position: fixed;
   top: 50%;
@@ -422,6 +489,7 @@ input.badge-input {
   background-color: #c82333;
 }
 
+/* Override from original file (keeps cascade): secondary-btn redefined */
 .secondary-btn {
   background-color: #6c757d;
   color: #fff;
@@ -432,6 +500,10 @@ input.badge-input {
   background-color: #5a6268;
 }
 
+/* ==========================
+   12) Recycle list / cards
+   ==========================
+*/
 .recycle-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -472,6 +544,7 @@ input.badge-input {
   margin-bottom: 10px;
 }
 
+/* Note: small badge style used in recycle cards (keeps original final cascade) */
 .badge {
   background: #00c8ff;
   color: #000;
@@ -516,7 +589,10 @@ input.badge-input {
   border: 1px solid #ccc;
 }
 
-/* SKILL HERE */
+/* ==========================
+   13) Skills / Skill Form
+   ==========================
+*/
 #skill-form {
   background-color: #111;
   padding: 20px;
@@ -555,7 +631,8 @@ input.badge-input {
   background-color: var(--scendary-text-color);
   color: #000;
 }
-/* Optional: Highlight code block */
+
+/* Optional: code highlighting block */
 pre code {
   display: block;
   background-color: #1e1e1e;
@@ -564,8 +641,9 @@ pre code {
   font-size: 1.1rem;
   color: #fff;
   overflow-x: auto;
-  white-space: pre-wrap; /* ✅ ده اللي بينزل الأسطر */
+  white-space: pre-wrap; /* preserve line breaks */
 }
+
 #restore-skill-btn {
   background-color: var(--scendary-text-color);
   color: var(--main-bg-color);
@@ -575,6 +653,7 @@ pre code {
   font-weight: bold;
   cursor: pointer;
 }
+
 .delete-skill-btn {
   background-color: red;
   border: none;
@@ -585,6 +664,11 @@ pre code {
   font-size: 1.5rem;
   color: var(--text-light);
 }
+
+/* ==========================
+   14) Filters / Search inputs
+   ==========================
+*/
 .filter-container {
   margin: 5rem 0;
   margin-right: 1rem;
@@ -645,9 +729,10 @@ pre code {
   }
 }
 
-/* message contact */
-
-/* === Messages Section Styling === */
+/* ==========================
+   15) Messages Section
+   ==========================
+*/
 #messages-section {
   padding: 3rem;
   background-color: var(--main-bg-color);
@@ -744,9 +829,11 @@ pre code {
   background-color: var(--scendary-text-color);
   color: var(--main-bg-color);
 }
+
 .msg-box {
   padding: 1rem 3rem;
 }
+
 .msg-box strong {
   color: var(--main-text-color);
   font-size: 2rem;

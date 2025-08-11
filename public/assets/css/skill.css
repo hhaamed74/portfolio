@@ -1,15 +1,23 @@
+/* ================================
+   Root Variables
+================================ */
 :root {
   --main-bg-color: #000;
   --main-text-color: #00c8ff;
   --scendary-text-color: #fff701;
   --text-light: #fff;
 }
+
+/* ================================
+   Skills Section Container
+================================ */
 #skills-section {
   padding: 50px 20px;
   max-width: 1200px;
   margin: auto;
 }
 
+/* Section Heading */
 #skills-section h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -18,12 +26,18 @@
   text-shadow: 0 0 10px #00c8ff;
 }
 
+/* ================================
+   Skills Grid Layout
+================================ */
 .skills-grid {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
+/* ================================
+   Skill Card Styles
+================================ */
 .skill-card {
   background-color: #1a1a1a;
   padding: 1rem;
@@ -35,27 +49,34 @@
   font-size: 2rem;
 }
 
+/* Hover Effect */
 .skill-card:hover {
   transform: translateY(-8px);
 }
 
+/* Icon inside skill card */
 .skill-card i {
   display: block;
   margin-bottom: 10px;
 }
 
+/* Skill title */
 .skill-card h3 {
   font-size: 1.5rem;
   margin: 10px 0;
   color: #ffffff;
 }
 
+/* Skill description */
 .skill-card p {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 10px;
 }
 
+/* ================================
+   Code Block Styling
+================================ */
 pre code {
   display: block;
   background-color: #1e1e1e;

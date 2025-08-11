@@ -1,54 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Basic Page Setup -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skills</title>
+
+    <!-- Prism.js Theme for Code Highlighting -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
     />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="./assets/images/cv.png"
       type="image/x-icon"
     />
+
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
+    <!-- Main Stylesheets -->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/skill.css" />
   </head>
+
   <body>
+    <!-- Toast Notification Container -->
     <div id="toast" class="toast"></div>
 
+    <!-- =========================
+         Navigation Bar
+    ========================== -->
     <nav class="navbar">
       <div class="container">
-        <a href="./dashboard/index.html"><h2 class="logo">Hamed Shahawi</h2></a>
+        <!-- Logo -->
+        <a href="./dashboard/index.html">
+          <h2 class="logo">Hamed Shahawi</h2>
+        </a>
+
+        <!-- Navigation Links -->
         <ul class="nav-links" id="navLinks">
           <li><a href="./dashboard/index.html">Home</a></li>
           <li><a href="./skills.html">Skills</a></li>
           <li><a href="./dashboard/index.html">Features</a></li>
-
           <li><a href="contact.html">Contact</a></li>
           <li><a href="about.html">About Us</a></li>
+
+          <!-- Account Dropdown Menu (Dynamic via JS) -->
           <li class="auth-menu">
             <a href="#">Account ▾</a>
             <ul class="auth-dropdown">
-              <!-- يتم تعبئتها تلقائيًا عبر جافاسكريبت حسب حالة تسجيل الدخول -->
+              <!-- Filled dynamically via JavaScript based on login status -->
             </ul>
           </li>
         </ul>
 
+        <!-- Mobile Menu Toggle Button -->
         <div class="menu-toggle" id="menuToggle">
           <span></span>
           <span></span>
@@ -56,23 +77,33 @@
         </div>
       </div>
     </nav>
+
+    <!-- =========================
+         Skills Section
+    ========================== -->
     <section id="skills-section">
       <h2 class="section-title">All Skills</h2>
       <div id="skills-container" class="skills-grid"></div>
     </section>
 
+    <!-- =========================
+         Footer Section
+    ========================== -->
     <footer class="footer">
       <div class="footer-container">
+        <!-- Footer Left: Logo & Credits -->
         <div class="footer-left">
-          <a href="./dashboard/index.html"
-            ><h2 class="logo">Hamed Shahawi</h2></a
-          >
+          <a href="./dashboard/index.html">
+            <h2 class="logo">Hamed Shahawi</h2>
+          </a>
           <p>Designed & Developed by Hamed Shahawi</p>
           <p>
-            <span class="copy">&#169;</span> <span id="year"></span> Hamed
-            Shahawi. All rights reserved.
+            <span class="copy">&#169;</span>
+            <span id="year"></span> Hamed Shahawi. All rights reserved.
           </p>
         </div>
+
+        <!-- Footer Center: Navigation Links -->
         <div class="footer-center">
           <h3>Navigation</h3>
           <ul>
@@ -82,28 +113,35 @@
             <li><a href="about.html">About Us</a></li>
           </ul>
         </div>
+
+        <!-- Footer Right: Social Media Links -->
         <div class="footer-right">
           <h3>Follow Me</h3>
           <div class="social-icons">
             <a
               href="https://www.facebook.com/profile.php?id=100034763891165&mibextid=2JQ9oc"
               target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://github.com/hhaamed74" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/hhaamed74" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
             <a
               href="https://www.linkedin.com/in/hamedabdulmohsen/"
               target="_blank"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
           </div>
         </div>
       </div>
     </footer>
-    <script src="./assets/js/auth.js"></script>
 
+    <!-- =========================
+         JavaScript Files
+    ========================== -->
+    <script src="./assets/js/auth.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/skillsData.js"></script>
     <script src="./assets/js/skill.js"></script>

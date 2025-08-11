@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta Information -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Hamed Shahawi</title>
+
+    <!-- Prism.js Theme for Code Highlighting -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
     />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="./assets/images/cv.png"
       type="image/x-icon"
     />
+
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
+    <!-- Main Stylesheets -->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/contact.css" />
   </head>
   <body>
+    <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
+    <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="container">
-        <a href="./dashboard/index.html"><h2 class="logo">Hamed Shahawi</h2></a>
+        <a href="./dashboard/index.html">
+          <h2 class="logo">Hamed Shahawi</h2>
+        </a>
         <ul class="nav-links" id="navLinks">
           <li><a href="./dashboard/index.html">Home</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="./dashboard/index.html">Features</a></li>
-
           <li><a href="contact.html">Contact</a></li>
           <li><a href="about.html">About Us</a></li>
           <li class="auth-menu">
             <a href="#">Account ▾</a>
             <ul class="auth-dropdown">
-              <!-- يتم تعبئتها تلقائيًا عبر جافاسكريبت حسب حالة تسجيل الدخول -->
+              <!-- Will be filled dynamically via JavaScript based on login status -->
             </ul>
           </li>
         </ul>
+        <!-- Mobile Menu Toggle -->
         <div class="menu-toggle" id="menuToggle">
           <span></span>
           <span></span>
@@ -56,6 +69,8 @@
         </div>
       </div>
     </nav>
+
+    <!-- Contact Section -->
     <section class="contact-section">
       <div class="contact-container">
         <h2 class="section-title">Contact <span>Me</span></h2>
@@ -64,6 +79,7 @@
         </p>
 
         <div class="contact-content">
+          <!-- Contact Information -->
           <div class="contact-info">
             <h3><i class="fas fa-user"></i> Hamed Shahawi</h3>
             <p>
@@ -76,6 +92,7 @@
             </p>
           </div>
 
+          <!-- Contact Form -->
           <form id="contact-form" class="contact-form">
             <input type="text" id="name" placeholder="Your Name" />
             <input type="email" id="email" placeholder="Your Email" />
@@ -90,18 +107,22 @@
       </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="footer">
       <div class="footer-container">
+        <!-- Left Footer -->
         <div class="footer-left">
-          <a href="./dashboard/index.html"
-            ><h2 class="logo">Hamed Shahawi</h2></a
-          >
+          <a href="./dashboard/index.html">
+            <h2 class="logo">Hamed Shahawi</h2>
+          </a>
           <p>Designed & Developed by Hamed Shahawi</p>
           <p>
             <span class="copy">&#169;</span> <span id="year"></span> Hamed
             Shahawi. All rights reserved.
           </p>
         </div>
+
+        <!-- Center Footer -->
         <div class="footer-center">
           <h3>Navigation</h3>
           <ul>
@@ -111,26 +132,32 @@
             <li><a href="about.html">About Us</a></li>
           </ul>
         </div>
+
+        <!-- Right Footer -->
         <div class="footer-right">
           <h3>Follow Me</h3>
           <div class="social-icons">
             <a
               href="https://www.facebook.com/profile.php?id=100034763891165&mibextid=2JQ9oc"
               target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://github.com/hhaamed74" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/hhaamed74" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
             <a
               href="https://www.linkedin.com/in/hamedabdulmohsen/"
               target="_blank"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- JavaScript Files -->
     <script src="./assets/js/auth.js"></script>
     <script src="./dashboard/dashboard.js"></script>
     <script src="./assets/js/script.js"></script>

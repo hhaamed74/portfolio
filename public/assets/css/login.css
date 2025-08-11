@@ -1,3 +1,6 @@
+/* =========================================
+   General Body Styles
+========================================= */
 body {
   background: radial-gradient(circle at top left, #00c8ff, #0f172a);
   color: #fff;
@@ -8,6 +11,9 @@ body {
   margin: 0;
 }
 
+/* =========================================
+   Authentication Container
+========================================= */
 .auth-container {
   background: rgba(30, 41, 59, 0.95);
   padding: 3rem 2rem;
@@ -19,6 +25,9 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 
+/* =========================================
+   Fade In Animation
+========================================= */
 @keyframes fadeIn {
   from {
     transform: translateY(20px);
@@ -30,12 +39,18 @@ body {
   }
 }
 
+/* =========================================
+   Headings
+========================================= */
 .auth-container h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #fff701;
 }
 
+/* =========================================
+   Input Fields
+========================================= */
 .auth-container input {
   display: block;
   width: 100%;
@@ -54,6 +69,9 @@ body {
   background-color: #475569;
 }
 
+/* =========================================
+   Submit Button
+========================================= */
 .auth-container button {
   background: linear-gradient(to right, #00c8ff, #fff701);
   border: none;
@@ -71,6 +89,9 @@ body {
   transform: scale(1.05);
 }
 
+/* =========================================
+   Login & Register Messages
+========================================= */
 #register-message,
 #login-message {
   margin-top: 15px;
@@ -78,6 +99,9 @@ body {
   color: #fff;
 }
 
+/* =========================================
+   Footer Links
+========================================= */
 .auth-footer {
   margin-top: 1rem;
   font-size: 1.6rem;
@@ -94,7 +118,9 @@ body {
   color: #00c8ff;
 }
 
-/* ✅ جديد: حقل الباسورد مع أيقونة العين */
+/* =========================================
+   Password Field with Eye Icon
+========================================= */
 .password-field {
   position: relative;
 }

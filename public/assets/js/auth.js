@@ -1,27 +1,51 @@
-// ==== Selectors ====
+// =======================
+//  DOM Element Selectors
+// =======================
 const registerForm = document.getElementById("register-form");
 const loginForm = document.getElementById("login-form");
 
 const registerMessage = document.getElementById("register-message");
 const loginMessage = document.getElementById("login-message");
 
-// ==== Helper Functions ====
+// =======================
+//  Local Storage Helpers
+// =======================
+
+/**
+ * Retrieve all registered users from localStorage.
+ * @returns {Array} List of user objects
+ */
 function getUsers() {
   return JSON.parse(localStorage.getItem("users")) || [];
 }
 
+/**
+ * Save updated users list to localStorage.
+ * @param {Array} users - List of user objects
+ */
 function saveUsers(users) {
   localStorage.setItem("users", JSON.stringify(users));
 }
 
+/**
+ * Store the current logged-in user in localStorage.
+ * @param {Object} user - The current user object
+ */
 function setCurrentUser(user) {
   localStorage.setItem("currentUser", JSON.stringify(user));
 }
 
+/**
+ * Retrieve the current logged-in user from localStorage.
+ * @returns {Object|null} Current user object or null
+ */
 function getCurrentUser() {
   return JSON.parse(localStorage.getItem("currentUser"));
 }
 
+/**
+ * Logout the current user and redirect to login page.
+ */
 function logoutUser() {
   localStorage.removeItem("currentUser");
   showToast("👋 Logged out successfully!");
@@ -30,6 +54,16 @@ function logoutUser() {
   }, 1000);
 }
 
+// =======================
+//  UI Feedback Functions
+// =======================
+
+/**
+ * Display a message in a target element and show toast.
+ * @param {HTMLElement} element - Target DOM element
+ * @param {string} text - Message content
+ * @param {string} [type="error"] - Message type ("success" or "error")
+ */
 function showMessage(element, text, type = "error") {
   element.textContent = text;
   element.style.color = type === "success" ? "green" : "red";
@@ -37,11 +71,16 @@ function showMessage(element, text, type = "error") {
   setTimeout(() => (element.textContent = ""), 3000);
 }
 
+/**
+ * Display a toast notification.
+ * @param {string} message - Notification content
+ * @param {string} [type="default"] - Toast type ("success", "error", or "default")
+ */
 function showToast(message, type = "default") {
   const toast = document.getElementById("toast");
   toast.textContent = message;
 
-  // تغيير اللون حسب النوع
+  // Change background color based on type
   if (type === "success") {
     toast.style.backgroundColor = "#28a745";
   } else if (type === "error") {
@@ -56,7 +95,9 @@ function showToast(message, type = "default") {
   }, 3000);
 }
 
-// ==== Register Logic with Strong Validation ====
+// =======================
+//  Registration Handling
+// =======================
 if (registerForm) {
   registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -65,7 +106,7 @@ if (registerForm) {
     const email = document.getElementById("email").value.trim().toLowerCase();
     const password = document.getElementById("password").value;
 
-    // === Validation ===
+    // === Form Validation ===
     const nameRegex = /^[a-zA-Z\s]{3,30}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex =
@@ -94,6 +135,7 @@ if (registerForm) {
       return;
     }
 
+    // === Check if email is already registered ===
     const users = getUsers();
     const userExists = users.find((user) => user.email === email);
 
@@ -102,19 +144,23 @@ if (registerForm) {
       return;
     }
 
+    // === Save New User ===
     const newUser = { name, email, password };
     users.push(newUser);
     saveUsers(users);
     setCurrentUser(newUser);
 
     showMessage(registerMessage, "✅ Registered successfully!", "success");
+
     setTimeout(() => {
       window.location.href = "/public/login.html";
     }, 1500);
   });
 }
 
-/// ==== Login Logic with Validation ====
+// =======================
+//  Login Handling
+// =======================
 if (loginForm) {
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -137,6 +183,7 @@ if (loginForm) {
       return;
     }
 
+    // === Authenticate User ===
     const users = getUsers();
     const foundUser = users.find(
       (user) => user.email === email && user.password === password
@@ -147,25 +194,29 @@ if (loginForm) {
       return;
     }
 
-    // ✅ Save and Redirect
+    // === Save Session and Redirect ===
     setCurrentUser(foundUser);
     localStorage.setItem("isLoggedIn", "true");
 
     showMessage(loginMessage, "✅ Login successful!", "success");
+
     setTimeout(() => {
       window.location.href = "/public/dashboard/index.html";
     }, 1000);
   });
 }
 
-// ==== Logout Listener ====
+// =======================
+//  Logout & Auth Checks
+// =======================
 document.addEventListener("DOMContentLoaded", () => {
+  // Logout Button Event
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", logoutUser);
   }
 
-  // Update menu based on login status
+  // Update navigation menu based on login state
   const authMenu = document.querySelector(".auth-dropdown");
   if (authMenu) {
     const currentUser = getCurrentUser();
@@ -186,6 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Restrict access to protected pages
   const isProtected = window.location.pathname.includes("/public/dashboard/");
 
   if (

@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ====== META & TITLE ====== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me - Hamed Shahawi</title>
 
+    <!-- ====== FONT AWESOME ====== -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <!-- ====== PRISM CODE THEME ====== -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
     />
 
+    <!-- ====== GOOGLE FONTS ====== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- ====== FAVICON ====== -->
     <link
       rel="shortcut icon"
       href="./assets/images/cv.png"
       type="image/x-icon"
     />
+
+    <!-- ====== ADDITIONAL FONT AWESOME (REDUNDANT BUT KEPT AS IS) ====== -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
+    <!-- ====== MAIN CSS FILES ====== -->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/about.css" />
   </head>
+
   <body>
+    <!-- ====== TOAST NOTIFICATION ====== -->
     <div id="toast" class="toast"></div>
 
+    <!-- ====== NAVBAR ====== -->
     <nav class="navbar">
       <div class="container">
-        <a href="./dashboard/index.html"><h2 class="logo">Hamed Shahawi</h2></a>
+        <!-- Logo -->
+        <a href="./dashboard/index.html">
+          <h2 class="logo">Hamed Shahawi</h2>
+        </a>
+
+        <!-- Navigation Links -->
         <ul class="nav-links" id="navLinks">
           <li><a href="./dashboard/index.html">Home</a></li>
           <li><a href="./skills.html">Skills</a></li>
@@ -49,11 +67,12 @@
           <li class="auth-menu">
             <a href="#">Account ▾</a>
             <ul class="auth-dropdown">
-              <!-- يتم تعبئتها تلقائيًا عبر جافاسكريبت حسب حالة تسجيل الدخول -->
+              <!-- Filled dynamically via JavaScript depending on login status -->
             </ul>
           </li>
         </ul>
 
+        <!-- Mobile Menu Toggle -->
         <div class="menu-toggle" id="menuToggle">
           <span></span>
           <span></span>
@@ -61,11 +80,16 @@
         </div>
       </div>
     </nav>
+
+    <!-- ====== ABOUT SECTION ====== -->
     <section class="about-section">
       <div class="container">
+        <!-- Profile Image -->
         <div class="about-image">
           <img src="./assets/images/hamed.jpg" alt="Hamed Shahawi" />
         </div>
+
+        <!-- About Information -->
         <div class="about-info">
           <h1>About Me</h1>
           <p><strong>Name:</strong> Hamed Shahawi</p>
@@ -77,49 +101,60 @@
             responsive websites.
           </p>
         </div>
+
+        <!-- ====== EDUCATION & CERTIFICATES SECTION ====== -->
         <section class="education-certificates">
           <h2>Education & Certificates</h2>
 
+          <!-- Certificates Container -->
           <div class="certificates-container">
+            <!-- Certificate: Degree -->
             <div class="certificate-card">
               <h3>B.Sc. in Computer Science</h3>
               <p><strong>University:</strong> M.E.T</p>
               <p><strong>Year:</strong> 2024</p>
-              <a href="./assets/certificates/graduation.pdf" target="_blank"
-                ><img src="assets/images/certifcate.jpg" alt=""
-              /></a>
+              <a href="./assets/certificates/graduation.pdf" target="_blank">
+                <img src="assets/images/certifcate.jpg" alt="" />
+              </a>
             </div>
 
+            <!-- Certificate: Professional Front-End Development -->
             <div class="certificate-card">
               <h3>Professional Front-End Web Development</h3>
               <p><strong class="strong">Platform:</strong> MCIT</p>
-              <a href="./assets/certificates/react.pdf" target="_blank"
-                ><img
+              <a href="./assets/certificates/react.pdf" target="_blank">
+                <img
                   src="./assets/images/certfic.png"
-                  alt=" Professional Front-End Web Development
-"
-              /></a>
+                  alt="Professional Front-End Web Development"
+                />
+              </a>
             </div>
           </div>
 
+          <!-- CV Button -->
           <div class="cv-button">
             <a href="cv.html" class="btn">📝 View My CV</a>
           </div>
         </section>
       </div>
     </section>
+
+    <!-- ====== FOOTER ====== -->
     <footer class="footer">
       <div class="footer-container">
+        <!-- Footer Left -->
         <div class="footer-left">
-          <a href="./dashboard/index.html"
-            ><h2 class="logo">Hamed Shahawi</h2></a
-          >
+          <a href="./dashboard/index.html">
+            <h2 class="logo">Hamed Shahawi</h2>
+          </a>
           <p>Designed & Developed by Hamed Shahawi</p>
           <p>
-            <span class="copy">&#169;</span> <span id="year"></span> Hamed
-            Shahawi. All rights reserved.
+            <span class="copy">&#169;</span>
+            <span id="year"></span> Hamed Shahawi. All rights reserved.
           </p>
         </div>
+
+        <!-- Footer Center -->
         <div class="footer-center">
           <h3>Navigation</h3>
           <ul>
@@ -130,6 +165,8 @@
             <li><a href="about.html">About Us</a></li>
           </ul>
         </div>
+
+        <!-- Footer Right -->
         <div class="footer-right">
           <h3>Follow Me</h3>
           <div class="social-icons">
@@ -138,9 +175,11 @@
               target="_blank"
               ><i class="fab fa-facebook-f"></i
             ></a>
-            <a href="https://github.com/hhaamed74" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
+
+            <a href="https://github.com/hhaamed74" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+
             <a
               href="https://www.linkedin.com/in/hamedabdulmohsen/"
               target="_blank"
@@ -150,8 +189,9 @@
         </div>
       </div>
     </footer>
-    <script src="./assets/js/auth.js"></script>
 
+    <!-- ====== JAVASCRIPT FILES ====== -->
+    <script src="./assets/js/auth.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

@@ -1,24 +1,35 @@
+/* ==============================
+   Global Styles
+============================== */
 body {
-  background: radial-gradient(circle at top left, #00c8ff, #0f172a);
-  color: #fff;
-  display: flex;
+  background: radial-gradient(
+    circle at top left,
+    #00c8ff,
+    #0f172a
+  ); /* Background gradient */
+  color: #fff; /* Default text color */
+  display: flex; /* Center content */
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* Full screen height */
   margin: 0;
 }
 
+/* ==============================
+   Auth Container Styles
+============================== */
 .auth-container {
-  background: rgba(30, 41, 59, 0.95);
+  background: rgba(30, 41, 59, 0.95); /* Semi-transparent background */
   padding: 3rem 2rem;
   border-radius: 15px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 0 25px #00c8ff;
+  box-shadow: 0 0 25px #00c8ff; /* Glow effect */
   text-align: center;
   animation: fadeIn 1s ease-in-out;
 }
 
+/* Fade-in Animation */
 @keyframes fadeIn {
   from {
     transform: translateY(20px);
@@ -30,12 +41,16 @@ body {
   }
 }
 
+/* Title Styling */
 .auth-container h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #fff701;
 }
 
+/* ==============================
+   Input Fields
+============================== */
 .auth-container input {
   display: block;
   width: 100%;
@@ -50,10 +65,14 @@ body {
   transition: background 0.3s;
 }
 
+/* Input focus effect */
 .auth-container input:focus {
   background-color: #475569;
 }
 
+/* ==============================
+   Buttons
+============================== */
 .auth-container button {
   background: linear-gradient(to right, #00c8ff, #fff701);
   border: none;
@@ -71,6 +90,9 @@ body {
   transform: scale(1.05);
 }
 
+/* ==============================
+   Messages & Footer Links
+============================== */
 #register-message,
 #login-message {
   margin-top: 15px;
@@ -94,13 +116,15 @@ body {
   color: #00c8ff;
 }
 
-/* ✅ جديد: حقل الباسورد مع أيقونة العين */
+/* ==============================
+   Password Field with Toggle Icon
+============================== */
 .password-field {
   position: relative;
 }
 
 .password-field input {
-  padding-right: 40px;
+  padding-right: 40px; /* Space for eye icon */
 }
 
 .toggle-password {

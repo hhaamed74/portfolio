@@ -4,27 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+
+    <!-- ✅ FontAwesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <!-- ✅ Prism.js for code highlighting -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
     />
+
+    <!-- ✅ Main site styles -->
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="dashboard.css" />
   </head>
   <body>
+    <!-- 🔔 Toast notification container -->
     <div id="toast" class="toast"></div>
-    <!-- مثلاً داخل الهيدر أو مكان مناسب -->
+
+    <!-- 🔹 Header -->
     <header>
       <div class="dashboard-header">
         Welcome, <span id="dashboard-username"></span>!
       </div>
     </header>
 
+    <!-- 🔹 Main Dashboard Layout -->
     <div class="dashboard-container">
+      <!-- 📌 Sidebar navigation -->
       <aside class="sidebar">
         <h2>Dashboard</h2>
         <ul>
@@ -35,21 +45,20 @@
           <hr class="my-line" />
           <li>Skills</li>
           <li>Messages</li>
-          <li data-section="profile-section">Profile</li>
           <hr class="my-line" />
-          <a href="./index.html"> <li>Home</li></a>
+          <a href="./index.html"><li>Home</li></a>
         </ul>
       </aside>
 
+      <!-- 📌 Main Content -->
       <main class="main-content">
-        <!-- Overview Section -->
+        <!-- === Overview Section === -->
         <section id="overview-section" class="section">
           <h1>Welcome to your Dashboard</h1>
           <p>Select a section from the sidebar to manage content.</p>
         </section>
 
-        <!-- Projects Section -->
-        <!-- Projects Section -->
+        <!-- === Projects Section === -->
         <section id="projects-section" class="section" style="display: none">
           <div class="section-header">
             <h2>Projects</h2>
@@ -69,6 +78,8 @@
               />
             </div>
           </div>
+
+          <!-- 🔍 Search Projects -->
           <div class="search-filter">
             <input
               type="text"
@@ -77,12 +88,11 @@
             />
           </div>
 
-          <div class="project-list" id="project-list">
-            <!-- Projects will appear here -->
-          </div>
+          <!-- 📜 Project List -->
+          <div class="project-list" id="project-list"></div>
         </section>
 
-        <!-- Recycle Bin Section -->
+        <!-- === Recycle Bin Section === -->
         <section id="recycle-bin-section" class="section" style="display: none">
           <h2>♻️ Recycle Bin</h2>
           <div id="recycle-list" class="recycle-list"></div>
@@ -91,7 +101,7 @@
           </button>
         </section>
 
-        <!-- Log History Section -->
+        <!-- === Log History Section === -->
         <section id="log-history-section" class="section" style="display: none">
           <h2>📋 Log History</h2>
           <ul id="log-list" class="log-list"></ul>
@@ -99,7 +109,8 @@
             🗑️ Clear Logs
           </button>
         </section>
-        <!-- Skills Section -->
+
+        <!-- === Skills Section === -->
         <section id="skills-section" class="section" style="display: none">
           <div class="section-header">
             <h2>Skills</h2>
@@ -108,7 +119,8 @@
             </button>
             <button id="restore-skill-btn">Restore Last Deleted Skill</button>
           </div>
-          <!-- 🔍 Search and Filter Section -->
+
+          <!-- 🔍 Search & Filter -->
           <div class="filter-container">
             <input
               type="text"
@@ -117,9 +129,10 @@
             />
             <select id="filter-color">
               <option value="">🎨 Filter by color</option>
-              <!-- سيتم ملؤها تلقائيًا -->
             </select>
           </div>
+
+          <!-- ➕ Add Skill Form -->
           <form id="skill-form">
             <input
               type="text"
@@ -137,34 +150,26 @@
             <button type="submit">➕ Add Skill</button>
           </form>
 
+          <!-- 📜 Skills List -->
           <div id="skill-list" class="project-list"></div>
         </section>
 
-        <!-- === Skills Section in Dashboard === -->
-
+        <!-- === Messages Section === -->
         <section id="messages-section" class="section">
           <h2 class="section-title">📩 Messages</h2>
-
-          <!-- 🔍 Search Filter -->
           <input
             type="text"
             id="search-message"
             placeholder="Search by name or email"
             class="message-search"
           />
-
-          <!-- 🧹 Clear All -->
           <button id="clear-all-btn" class="clear-all-btn">🧹 Clear All</button>
-
-          <!-- 🔔 Toast -->
           <div id="toast" class="toast"></div>
-
-          <!-- 📩 Message List -->
           <ul id="message-list" class="message-list"></ul>
         </section>
-        <!-- ==== Profile Section ==== -->
       </main>
-      <!-- Add Project Form -->
+
+      <!-- 📌 Project Form (hidden by default) -->
       <div id="project-form-container" style="display: none; margin-top: 20px">
         <form id="project-form">
           <input
@@ -173,19 +178,23 @@
             placeholder="Project Title"
             required
           />
+
           <label for="project-image">Upload Image:</label>
           <input type="file" id="project-image" accept="image/*" />
+
           <label for="project-image-url">Or Image URL:</label>
           <input
             type="url"
             id="project-image-url"
             placeholder="https://example.com/image.png"
           />
+
           <textarea
             id="project-description"
             placeholder="Project Description"
             required
           ></textarea>
+
           <div id="skills-container">
             <label>Technologies Used:</label>
             <input type="text" class="tech-input" placeholder="e.g., HTML" />
@@ -197,17 +206,20 @@
             />
             <input type="text" class="tech-input" placeholder="e.g., React" />
           </div>
+
           <label for="project-demo">Demo Link:</label>
           <input
             type="url"
             id="project-demo"
             placeholder="https://yourdemo.com"
           />
+
           <button type="submit">Save Project</button>
         </form>
       </div>
     </div>
 
+    <!-- 📜 Scripts -->
     <script src="dashboard.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   </body>

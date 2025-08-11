@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ====== META & TITLE ====== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hamed Shahawi</title>
-    <!-- fonts -->
+
+    <!-- ====== GOOGLE FONTS ====== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <!-- favicon -->
+
+    <!-- ====== FAVICON ====== -->
     <link
       rel="shortcut icon"
       href="../assets/images/favicon.ico"
       type="image/x-icon"
     />
-    <!-- font-awesome -->
+
+    <!-- ====== FONT AWESOME ====== -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- CSS main file (share file) -->
+    <!-- ====== MAIN CSS FILES ====== -->
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="../assets/css/index.css" />
   </head>
 
   <body>
+    <!-- ====== TOAST NOTIFICATION ====== -->
     <div id="toast" class="toast"></div>
 
-    <!-- start navbar -->
+    <!-- ====== NAVBAR ====== -->
     <nav class="navbar">
       <div class="container">
-        <a href="../dashboard/index.html"
-          ><h2 class="logo">Hamed Shahawi</h2></a
-        >
+        <!-- Logo -->
+        <a href="../dashboard/index.html">
+          <h2 class="logo">Hamed Shahawi</h2>
+        </a>
+
+        <!-- Navigation Links -->
         <ul class="nav-links" id="navLinks">
           <li><a href="../dashboard/index.html">Home</a></li>
           <li><a href="../skills.html">Skills</a></li>
@@ -46,11 +54,12 @@
           <li class="auth-menu">
             <a href="#">Account ▾</a>
             <ul class="auth-dropdown">
-              <!-- يتم تعبئتها تلقائيًا عبر جافاسكريبت حسب حالة تسجيل الدخول -->
+              <!-- Filled dynamically via JavaScript depending on login status -->
             </ul>
           </li>
         </ul>
-        <!-- mobile -->
+
+        <!-- Mobile Menu Toggle -->
         <div class="menu-toggle" id="menuToggle">
           <span></span>
           <span></span>
@@ -58,16 +67,16 @@
         </div>
       </div>
     </nav>
-    <!-- End navbar -->
-    <!-- start hero section -->
+
+    <!-- ====== HERO SECTION ====== -->
     <header class="hero">
       <div class="contaner">
         <h1 class="info">
           Hello, I'm
-          <span class="main__name"
-            ><span class="first__char">H</span>amed
-            <span class="sceond__char">S</span>hahawi</span
-          >
+          <span class="main__name">
+            <span class="first__char">H</span>amed
+            <span class="sceond__char">S</span>hahawi
+          </span>
         </h1>
         <p class="jop__title">
           <i class="fas fa-terminal icon"></i>Front-End Developer
@@ -75,36 +84,32 @@
         <a href="#projects" class="cta">View My Work</a>
       </div>
     </header>
-    <!-- End hero section -->
-    <!-- start projects section -->
 
+    <!-- ====== PROJECTS SECTION ====== -->
     <section class="projects" id="projects">
       <div class="container">
         <h2 class="section-title">My Projects</h2>
-
         <div class="projects-grid">
-          <!-- المشاريع الديناميكية هنا -->
+          <!-- Dynamic projects will be loaded here via JavaScript -->
         </div>
         <p id="projects-count"></p>
       </div>
     </section>
 
-    <!-- End projects section -->
-    <!-- start skills section -->
-
+    <!-- ====== SKILLS SECTION ====== -->
     <section class="skills" id="skills">
       <h2 class="section-title">My Skills</h2>
-
       <div id="skills-container" class="skills-grid"></div>
       <div class="view__all">
         <a href="../skills.html" class="view-more-btn">View All Skills</a>
       </div>
     </section>
-    <!-- End skills section -->
-    <!-- start footer  -->
+
+    <!-- ====== FEATURES SECTION ====== -->
     <section class="features" id="Features">
       <h2 class="section-title">Our Features</h2>
       <div class="feature-container">
+        <!-- Feature: Development -->
         <div class="feature-card">
           <i class="fas fa-code feature-icon dev"></i>
           <h3>Development</h3>
@@ -113,6 +118,8 @@
             and smooth UI.
           </p>
         </div>
+
+        <!-- Feature: Teacher -->
         <div class="feature-card">
           <i class="fas fa-chalkboard-teacher feature-icon teacher"></i>
           <h3>Teacher</h3>
@@ -121,6 +128,8 @@
             fun way.
           </p>
         </div>
+
+        <!-- Feature: Writer -->
         <div class="feature-card">
           <i class="fas fa-pen-nib feature-icon writer"></i>
           <h3>Writer</h3>
@@ -129,21 +138,24 @@
           </p>
         </div>
       </div>
-      <!-- <button id="show-more-btn">Show More</button> -->
     </section>
 
+    <!-- ====== FOOTER ====== -->
     <footer class="footer">
       <div class="footer-container">
+        <!-- Footer Left -->
         <div class="footer-left">
-          <a href="../dashboard/index.html"
-            ><h2 class="logo">Hamed Shahawi</h2></a
-          >
+          <a href="../dashboard/index.html">
+            <h2 class="logo">Hamed Shahawi</h2>
+          </a>
           <p>Designed & Developed by Hamed Shahawi</p>
           <p>
-            <span class="copy">&#169;</span> <span id="year"></span> Hamed
-            Shahawi. All rights reserved.
+            <span class="copy">&#169;</span>
+            <span id="year"></span> Hamed Shahawi. All rights reserved.
           </p>
         </div>
+
+        <!-- Footer Center (Navigation Links) -->
         <div class="footer-center">
           <h3>Navigation</h3>
           <ul>
@@ -153,27 +165,30 @@
             <li><a href="../about.html">About Us</a></li>
           </ul>
         </div>
+
+        <!-- Footer Right (Social Links) -->
         <div class="footer-right">
           <h3>Follow Me</h3>
           <div class="social-icons">
             <a
               href="https://www.facebook.com/profile.php?id=100034763891165&mibextid=2JQ9oc"
               target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://github.com/hhaamed74" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
+            ><i class="fab fa-facebook-f"></i></a>
+
+            <a href="https://github.com/hhaamed74" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+
             <a
               href="https://www.linkedin.com/in/hamedabdulmohsen/"
               target="_blank"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+            ><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
     </footer>
-    <!-- End footer  -->
+
+    <!-- ====== JAVASCRIPT FILES ====== -->
     <script src="../assets/js/auth.js"></script>
     <script src="../assets/js/projects.js"></script>
     <script src="../assets/js/script.js"></script>
